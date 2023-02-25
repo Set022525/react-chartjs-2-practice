@@ -22,14 +22,19 @@ ChartJS.register(
 );
 import { useState } from 'react';
 
-const LineGraph: React.FC = (props) => {
+type Props = {
+  graphTitle: String
+  label: String
+}
+
+const LineGraph = ({graphTitle, label}: Props) => {
 
     const options = {
         responsive: true,
         plugins: {
           title: {
             display: true,
-            text: "sample-graph",
+            text: graphTitle,
           },
         },
       };
@@ -46,7 +51,7 @@ const LineGraph: React.FC = (props) => {
         labels: labels,
         datasets: [
             {
-                label: "test",
+                label: label,
                 data: data,
                 borderColor: "rgb(75, 192, 192)"
             }

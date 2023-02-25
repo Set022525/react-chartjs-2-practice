@@ -16,10 +16,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <LineGraph />
-        <LineGraph />
-        <LineGraph />
-        <LineGraph />
+        <LineGraph graphTitle="raw data" label=""/>
+        <LineGraph graphTitle="n=1" label=""/>
+        <LineGraph graphTitle="n=2" label=""/>
+        <LineGraph graphTitle="n=3" label=""/>
       </main>
     </>
   )
