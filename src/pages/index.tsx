@@ -2,11 +2,17 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import LineGraph from '@/components/LineGraph'
+import React, { useState } from "react"
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const [file, setFile] = useState<File | null>(null)
+
+  const onChangeFile
+
   return (
     <>
       <Head>
@@ -16,6 +22,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <div className='App-form'>
+          <input name="file" type="file" accept="audio/wav" onchange={onChangeFile}></input>
+        </div>
         <LineGraph graphTitle="raw data" label=""/>
         <LineGraph graphTitle="n=1" label=""/>
         <LineGraph graphTitle="n=2" label=""/>
